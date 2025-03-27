@@ -1,6 +1,4 @@
-# VE20
-VE/24-25/20
-# Creating an HTML file with the invoice table
+
 html_content = """\
 <!DOCTYPE html>
 <html lang="en">
@@ -56,19 +54,3 @@ html_content = """\
     </table>
 </body>
 </html>
-"""
-
-# Save the HTML file
-html_file_path = "/mnt/data/invoice_bill.html"
-with open(html_file_path, "w", encoding="utf-8") as file:
-    file.write(html_content)
-
-# Generate QR code linking to the HTML file
-qr = qrcode.make(f"sandbox:{html_file_path}")
-
-# Save QR code
-qr_code_path = "/mnt/data/invoice_html_qr.png"
-qr.save(qr_code_path)
-
-# Return file paths for download
-html_file_path, qr_code_path
